@@ -1,41 +1,45 @@
 class Shellwise < Formula
   desc "Smart command history with inline auto-suggest and fuzzy search for your terminal"
   homepage "https://github.com/kurovu146/shellwise"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.1/shellwise-darwin-arm64.tar.gz"
-      sha256 "5be3446d99bf01c9314482e9d34f1360c471e5b0590798eb392c49e2e8972bbf"
+      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.2/shellwise-darwin-arm64.tar.gz"
+      sha256 "a818934248557e526ce11b09ea6c3e82a26717c56285966268e0618be32427d5"
 
       def install
         bin.install "shellwise-darwin-arm64" => "shellwise"
+        bin.install_symlink "shellwise" => "sw"
       end
     else
-      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.1/shellwise-darwin-x64.tar.gz"
-      sha256 "b41d6ea602fa2b97ec8c1d36513668caffeca952fdf3c10d5cbfada2dd74cd65"
+      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.2/shellwise-darwin-x64.tar.gz"
+      sha256 "5462e0033326ac7028ccd8178bd76fae1cab8df7cd56f297f6033e0df71297ad"
 
       def install
         bin.install "shellwise-darwin-x64" => "shellwise"
+        bin.install_symlink "shellwise" => "sw"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.1/shellwise-linux-arm64.tar.gz"
-      sha256 "fa44f736904e161fac478f91f3ff4b130fed05c062b55972c7464b0f6b2701bf"
+      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.2/shellwise-linux-arm64.tar.gz"
+      sha256 "1e9e787b67755a6d524766471e0f7a631a0c963253396be7cf8503eb811857ca"
 
       def install
         bin.install "shellwise-linux-arm64" => "shellwise"
+        bin.install_symlink "shellwise" => "sw"
       end
     else
-      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.1/shellwise-linux-x64.tar.gz"
-      sha256 "90540607f5a73310bda57e0ac87979984cc18106dd0b61df7b33ec8836edf99b"
+      url "https://github.com/kurovu146/shellwise/releases/download/v0.3.2/shellwise-linux-x64.tar.gz"
+      sha256 "c73b45d5dd0a9c20482d3a36826a91ac0fad5d167063987874a4e1aadc8e8f0c"
 
       def install
         bin.install "shellwise-linux-x64" => "shellwise"
+        bin.install_symlink "shellwise" => "sw"
       end
     end
   end
